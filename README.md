@@ -18,7 +18,7 @@
 
 * 付録E E.3 JSONパーサ
 
- [JavaScriptパターン ―優れたアプリケーションのための作法](http://www.amazon.co.jp/dp/4873114888/)より
+[JavaScriptパターン ―優れたアプリケーションのための作法](http://www.amazon.co.jp/dp/4873114888/)より
 
 * 4章 関数
 
