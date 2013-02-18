@@ -112,4 +112,3 @@ ttt.serverPlay(3);
 // 8.5.3
 
 new Image().src = "http://example.org/some/page.php";
-
