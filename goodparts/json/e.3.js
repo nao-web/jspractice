@@ -6,7 +6,7 @@ var json_parse = function () {
 			'\\': '\\',
 			'/': '/',
 			b: 'b',
-			f:　'\f',
+			f: '\f',
 			n: '\n',
 			r: '\r',
 			t: '\t'
