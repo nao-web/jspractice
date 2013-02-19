@@ -11,6 +11,7 @@
     <p><input type="button" id="shindan" value="診断!"></p>
     <h2>診断結果</h2>
     <p id="result">こちらに結果が表示されます。</p>
+    <div id="tweet"></div>
     <script>
         $('#shindan').click(function() {
             var name = $('#name').val();
@@ -20,6 +21,8 @@
             var character = characters[Math.floor(Math.random() * characters.length)];
             var result = name + 'さんは「' + character + type + '」タイプです！';
             $('#result').text(result);
+            var tweetLink = '<a href="https://twitter.com/intent/tweet?text='++'&hashtags=dotinstall">ツイートする</a>';
+            $('#tweet').html(tweetLink);
         });
     </script>
 </body>
