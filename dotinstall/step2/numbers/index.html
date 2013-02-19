@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScriptの練習</title>
+</head>
+<body onload="initButtons();">
+	<h1>小さい数字からタッチ！</h1>
+    <p>Your Score: <span id="score"></span></p>
+	<input type="button" id="button_0" value="" onclick="touched(0);" />
+    <input type="button" id="button_1" value="" onclick="touched(1);" />
+    <input type="button" id="button_2" value="" onclick="touched(2);" /><br />
+    <input type="button" id="button_3" value="" onclick="touched(3);" />
+    <input type="button" id="button_4" value="" onclick="touched(4);" />
+    <input type="button" id="button_5" value="" onclick="touched(5);" /><br />
+    <input type="button" id="button_6" value="" onclick="touched(6);" />
+    <input type="button" id="button_7" value="" onclick="touched(7);" />
+    <input type="button" id="button_8" value="" onclick="touched(8);" />
+	<script>
+    	function initButtons() {
+	        var buttons = [];
+	        for (var i=0; i<=8; i++) {
+	            var flag = true;
+	            while (flag) {
+	                var a = Math.floor(Math.random() * 9);
+	                if (buttons[a] == undefined) {
+                            buttons[a] = i;
+                            document.getElementById('button_'+a).value = i;
+                            flag = false;
+                        }
+	            	}
+	        	}
+	        	runTimer();
+	    	}
+	    	var currentNumber = 0;
+	    	var score = 0;
+	   		var timerId;
+            
+            function runTimer() {
+               document.getElementById('score').innerHTML = score++;
+               timerId = setTimeout(runTimer, 10);
+            }
+
+	    	function touched(n) {
+	    		var touchedNumber = document.getElementById('button_'+n).value;
+                if (touchedNumber == currentNumber) {
+                    currentNumber++;
+                    document.getElementById('button_'+n).value = ' ';
+                    if (currentNumber > 8) {
+                    	alert("Game Over! Your Score: " + score);
+                    	clearTimeout(timerId)
+                    }
+                } else {
+                    alert("Wrong Number!");
+                }
+            }
+	</script>
+</body>
+</html>
