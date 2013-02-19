@@ -6,6 +6,7 @@
 </head>
 <body onload="initButtons();">
 	<h1>小さい数字からタッチ！</h1>
+    <p>Your Score: <span id="score"></span></p>
 	<input type="button" id="button_0" value="" onclick="touched(0);" />
     <input type="button" id="button_1" value="" onclick="touched(1);" />
     <input type="button" id="button_2" value="" onclick="touched(2);" /><br />
@@ -31,6 +32,7 @@
 	        	}
 	    	}
 	    	var currentNumber = 0;
+	    	var score = 0;
 
 	    	function touched(n) {
 	    		var touchedNumber = document.getElementById('button_'+n).value;
@@ -38,7 +40,7 @@
                     currentNumber++;
                     document.getElementById('button_'+n).value = ' ';
                     if (currentNumber > 8) {
-                    	alert("Game Over!");
+                    	alert("Game Over! Your Score: " + score);
                     }
                 } else {
                     alert("Wrong Number!");
