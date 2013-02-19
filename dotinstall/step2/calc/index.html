@@ -6,16 +6,21 @@
 </head>
 <body>
 <h1>割り勘電卓</h1>
-<p>支払額: <input type="text" id="amount" value=""></p>
+<p>支払額: <input type="text" id="amout" value=""></p>
 <p>人数: <input type="text" id="num" value=""></p>
 <p><input type="button" value="計算!" onclick="calc();"></p>
 <p id="result"></p>
 <script>
     function calc() {
-    	var amount = document.getElementById('amount').value;
+    	var amout = document.getElementById('amout').value;
     	var num = document.getElementById('num').value;
-    	console.log(amount);
+    	console.log(amout);
     	console.log(num);
+		var unit = 100;
+        var x = Math.floor((amout / num) / unit) * unit;
+        var y = amout - (x * num);
+        console.log(x);
+        console.log(y);
     }
 </script>
 </body>
