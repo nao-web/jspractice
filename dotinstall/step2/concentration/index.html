@@ -25,6 +25,7 @@
     <script>
         var cardSelected = false;
         var currentCard;
+        var openedButtonId;
         var cards = [];
 
         function initCards() {
@@ -49,11 +50,16 @@
                 if (currentCard == cards[n]) {
 
                 } else {
+                    setTimeout(function() {
+                    document.getElementById('button_' + n).value = '?';
+                    document.getElementById('button_' +openedButtonId).value = '?';
+                }, 500);
 
                 }
                 cardSelected = false;
             } else {
                 currentCard = cards[n];
+                openedButtonId = n;
                 cardSelected = true;
             }
         }
