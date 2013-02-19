@@ -24,9 +24,10 @@
     <input type="button" id="button_15" value="" onclick="flip(15);" />
     <script>
         var cardSelected = false;
+        var currentCard;
+        var cards = [];
 
         function initCards() {
-            var cards = [];
             for (var i = 0; i <= 15; i++) {
                 var flag = true;
                 while (flag) {
@@ -45,7 +46,9 @@
             if (cardSelected) {
             
             } else {
-
+                currentCard = cards[n];
+                document.getElementById('button_' + n).value = cards[n];
+                cardSelected = true;
             }
         }
     </script>
