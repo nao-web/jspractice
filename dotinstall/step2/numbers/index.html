@@ -16,7 +16,22 @@
 	<input type="button" id="button_7" value="" />
 	<input type="button" id="button_8" value="" />
 	<script>
-	
+	    function initButtons() {
+	        var buttons = [];
+	        for (var i=0; i<=8; i++) {
+	            var flag = true;
+	            while (flag) {
+	                var a = Math.floor(Math.random() * 9);
+	                if (buttons[a] == undefined) {
+	                    buttons[a] = i;
+	                    flag = false;
+	                }
+	            }
+	        }
+	        console.dir(buttons);
+	    }
+	    
+	    initButtons();
 	</script>
 </body>
 </html>
