@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>jQueryの練習</title>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <style>
+        span {
+            cursor:pointer;
+        }
+    </style>
+
 </head>
 <body>
     <h1>間違い探しゲーム！</h1>
     <p><input type="button" value="開始！" onclick="gameStart();"></p>
+    <p id="score"></p>
     <div id="cells"></div>
     <script>
         var level = 0;
@@ -18,10 +25,16 @@
         ];
         var MAX_LEVEL = games.length - 1;
         var dim = 5;
+        var t1;
+        var t2;
     
         function gameStart() {
             var dummy = games[level][0];
             var seikai = games[level][1];
+            
+            if (level == 0) {
+                t1 = new Date().getTime();
+            }
             
             var cells = '';
             for (var i = 1; i <= dim * dim; i++) {
@@ -46,7 +59,8 @@
                     if ($(this).text() == seikai) {
                         level++;
                         if (level > MAX_LEVEL) {
-                            alert("Game Over!");
+                            t2 = new Date().getTime();
+                            $('#score').text('Your score is '+(t2-t1)/1000+'!!');
                         }
                         gameStart();
                     }
