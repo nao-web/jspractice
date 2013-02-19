@@ -37,6 +37,9 @@
                 if (touchedNumber == currentNumber) {
                     currentNumber++;
                     document.getElementById('button_'+n).value = ' ';
+                    if (currentNumber > 8) {
+                    	alert("Game Over!");
+                    }
                 } else {
                     alert("Wrong Number!");
                 }
