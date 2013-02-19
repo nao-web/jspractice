@@ -23,6 +23,16 @@
                     }
                 }
                 $('#cells').html(cells);
+
+                var chars = [];
+                for (var i = 0; i < dim * dim; i++) {
+                chars.push(dummy);
+
+                var offset = Math.floor(Math.random() * chars.length);
+                chars.splice(offset, 1, seikai);
+
+                console.log(chars);
+            }
             }
     </script>
 </body>
