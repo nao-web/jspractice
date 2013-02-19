@@ -22,15 +22,11 @@ $(function() {
 	$('#clear').click(function() {
         $('#memo').val('');
         localStorage.removeItem('memo');
-        // localStorage.clear();
     });
 
-(function autoSave() {
+	$('#memo').bind('keyup', function() {
         localStorage.setItem('memo', $('#memo').val());
-        $('#message').show().hide(200);
-        setTimeout(autoSave, 1000);
-    })();
- 
+    });
 });
 </script>
 </html>
