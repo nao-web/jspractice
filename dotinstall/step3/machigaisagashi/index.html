@@ -10,37 +10,45 @@
     <p><input type="button" value="開始！" onclick="gameStart();"></p>
     <div id="cells"></div>
     <script>
+        var level = 0;
+        var games = [
+            ['問', '間'],
+            ['大', '太'],
+            ['白', '臼']
+        ];
+        var MAX_LEVEL = games.length - 1;
+        var dim = 5;
+    
         function gameStart() {
-            var dummy = '問';
-            var seikai = '間';
-            var dim = 5;
-
+            var dummy = games[level][0];
+            var seikai = games[level][1];
+            
             var cells = '';
-                for (var i = 1; i <= dim * dim; i++) {
-                    cells += '<span id="s' + i + '"></span>';
-                    if (i % dim == 0) {
-                        cells += '<br />';
-                    }
+            for (var i = 1; i <= dim * dim; i++) {
+                cells += '<span id="s' + i + '"></span>';
+                if (i % dim == 0) {
+                    cells += '<br />';
                 }
-                $('#cells').html(cells);
-
-                var chars = [];
-                for (var i = 0; i < dim * dim; i++) {
+            }
+            $('#cells').html(cells);
+            
+            var chars = [];
+            for (var i = 0; i < dim * dim; i++) {
                 chars.push(dummy);
-                }
-
-                var offset = Math.floor(Math.random() * chars.length);
-                chars.splice(offset, 1, seikai);
-
-                for (var i = 1; i <= chars.length; i++) {
+            }
+            
+            var offset = Math.floor(Math.random() * chars.length);
+            chars.splice(offset, 1, seikai);
+ 
+            for (var i = 1; i <= chars.length; i++) {
                 $('#s'+i).text(chars[i - 1]);
                 $('#s'+i).click(function() {
                     if ($(this).text() == seikai) {
                         alert("正解！");
                     }
                 });
-                }
             }
+        }
     </script>
 </body>
 </html>
