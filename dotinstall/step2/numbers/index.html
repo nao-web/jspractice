@@ -30,9 +30,16 @@
                         }
 	            	}
 	        	}
+	        	runTimer();
 	    	}
 	    	var currentNumber = 0;
 	    	var score = 0;
+	   		var timerId;
+            
+            function runTimer() {
+               document.getElementById('score').innerHTML = score++;
+               timerId = setTimeout(runTimer, 10);
+            }
 
 	    	function touched(n) {
 	    		var touchedNumber = document.getElementById('button_'+n).value;
@@ -41,6 +48,7 @@
                     document.getElementById('button_'+n).value = ' ';
                     if (currentNumber > 8) {
                     	alert("Game Over! Your Score: " + score);
+                    	clearTimeout(timerId)
                     }
                 } else {
                     alert("Wrong Number!");
