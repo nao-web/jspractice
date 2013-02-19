@@ -43,11 +43,17 @@
         initCards();
 
         function flip(n) {
+            document.getElementById('button_' + n).value = cards[n];
             if (cardSelected) {
-            
+
+                if (currentCard == cards[n]) {
+
+                } else {
+
+                }
+                cardSelected = false;
             } else {
                 currentCard = cards[n];
-                document.getElementById('button_' + n).value = cards[n];
                 cardSelected = true;
             }
         }
