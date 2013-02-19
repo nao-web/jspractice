@@ -26,7 +26,9 @@
         var cardSelected = false;
         var currentCard;
         var openedButtonId;
+        var cardsCount = 0;
         var cards = [];
+        var score = 0;
 
         function initCards() {
             for (var i = 0; i <= 15; i++) {
@@ -48,7 +50,10 @@
             if (cardSelected) {
 
                 if (currentCard == cards[n]) {
-
+                    cardsCount++;
+                    if (cardsCount > 7) {
+                        alert('Game Over! Your Score:'+score);
+                    }
                 } else {
                     setTimeout(function() {
                     document.getElementById('button_' + n).value = '?';
