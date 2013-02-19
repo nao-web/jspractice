@@ -8,7 +8,6 @@
 <body>
 <h1>メモ帳</h1>
  <textarea id="memo" rows="10" cols="40" name="memo"></textarea>
-    <p id="message" style="display:none;">Saving...</p>
     <p><input type="button" id="clear" value="消去"></p>
 </body>
 
@@ -27,7 +26,6 @@ $(function() {
 
 (function autoSave() {
         localStorage.setItem('memo', $('#memo').val());
-        $('#message').show().hide(200);
         setTimeout(autoSave, 1000);
     })();
  
