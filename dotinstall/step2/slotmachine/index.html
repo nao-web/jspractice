@@ -11,12 +11,17 @@
 <span id="spin_2">0</span> <input type="button" value="stop!" onclick="stop();">
 <script>
 var i = 0;
-
+var r = [];	// r[0], r[1], r[2]
 function spin() {
 	document.getElementById('spin_' + i).innerHTML = Math.floor(Math.random() * 10);
 	setTimeout(spin, 100);
 }
 spin();
+
+function stop() {
+	r[i] = document.getElementById('spin_' + i).innerHTML;
+	i++;
+}
 </script>
 
 </body>
