@@ -13,14 +13,12 @@
 
 <script>
 $(function() {
-
-/*
-localStorage.setItem('memo', 'ほにゃらら');
-localStorage.getItem('memo');
-localStorage.removeItem('memo');
-localStorage.clear();
-*/
-
+ 
+    $('#save').click(function() {
+        localStorage.setItem('memo', $('#memo').val());
+        console.log(localStorage.getItem('memo'));
+    });
+ 
 });
 </script>
 </html>
