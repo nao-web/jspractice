@@ -44,7 +44,11 @@
                 $('#s'+i).text(chars[i - 1]);
                 $('#s'+i).click(function() {
                     if ($(this).text() == seikai) {
-                        alert("正解！");
+                        level++;
+                        if (level > MAX_LEVEL) {
+                            alert("Game Over!");
+                        }
+                        gameStart();
                     }
                 });
             }
