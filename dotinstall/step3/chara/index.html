@@ -21,7 +21,7 @@
             var character = characters[Math.floor(Math.random() * characters.length)];
             var result = name + 'さんは「' + character + type + '」タイプです！';
             $('#result').text(result);
-            var tweetLink = '<a href="https://twitter.com/intent/tweet?text='++'&hashtags=dotinstall">ツイートする</a>';
+            var tweetLink = '<a href="https://twitter.com/intent/tweet?text='+ encodeURIComponent(result) +'&hashtags=dotinstall">ツイートする</a>';
             $('#tweet').html(tweetLink);
         });
     </script>
