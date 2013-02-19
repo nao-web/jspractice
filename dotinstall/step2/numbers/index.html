@@ -6,15 +6,15 @@
 </head>
 <body onload="initButtons();">
 	<h1>小さい数字からタッチ！</h1>
-	<input type="button" id="button_0" value="" />
-	<input type="button" id="button_1" value="" />
-	<input type="button" id="button_2" value="" /><br />
-	<input type="button" id="button_3" value="" />
-	<input type="button" id="button_4" value="" />
-	<input type="button" id="button_5" value="" /><br />
-	<input type="button" id="button_6" value="" />
-	<input type="button" id="button_7" value="" />
-	<input type="button" id="button_8" value="" />
+	<input type="button" id="button_0" value="" onclick="touched(0);" />
+    <input type="button" id="button_1" value="" onclick="touched(1);" />
+    <input type="button" id="button_2" value="" onclick="touched(2);" /><br />
+    <input type="button" id="button_3" value="" onclick="touched(3);" />
+    <input type="button" id="button_4" value="" onclick="touched(4);" />
+    <input type="button" id="button_5" value="" onclick="touched(5);" /><br />
+    <input type="button" id="button_6" value="" onclick="touched(6);" />
+    <input type="button" id="button_7" value="" onclick="touched(7);" />
+    <input type="button" id="button_8" value="" onclick="touched(8);" />
 	<script>
     	function initButtons() {
 	        var buttons = [];
@@ -30,6 +30,9 @@
 	            	}
 	        	}
 	    	}
+
+	    	function touched(n) {
+            }
 	</script>
 </body>
 </html>
