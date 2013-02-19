@@ -12,16 +12,30 @@
 <script>
 var i = 0;
 var r = [];	// r[0], r[1], r[2]
+var timerId;
+
 function spin() {
 	document.getElementById('spin_' + i).innerHTML = Math.floor(Math.random() * 10);
-	setTimeout(spin, 100);
+	timerId = setTimeout(spin, 100);
 }
 spin();
 
 function stop() {
 	r[i] = document.getElementById('spin_' + i).innerHTML;
 	i++;
-}
+	if (i > 2) {
+		clearTimeout(timerId);
+		// console.log(r);
+		r.sort();
+		if (r[0] == r[1] && r[0] == [2]) {
+			alert("3つ揃った！");
+			} else if (r[0] == r[1] || r[1] == r[2]) {
+				alert("2つ揃った");
+			} else {
+				alert("残念！");
+			}
+		}
+	}
 </script>
 
 </body>
