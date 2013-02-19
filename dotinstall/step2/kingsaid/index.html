@@ -13,7 +13,12 @@
 	function kingSaid() {
 		var orders = ['お辞儀しなさい！', 'デコピンしなさい！', 'なでなでしなさい！', '頭ぽんぽん！'];
 		var order = orders[Math.floor(Math.random() * orders.length)];
-		console.log(order);		
+		console.log(order);
+
+		var num = document.getElementById('num').value;
+
+		var p1 = Math.floor(Math.random() * num) + 1;
+		var p2 = Math.floor(Math.random() * num) + 1;
 	}
 </script>
 </html>
