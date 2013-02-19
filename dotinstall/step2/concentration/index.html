@@ -30,8 +30,8 @@
                 while (flag) {
                     var a = Math.floor(Math.random() * 16);
                     if (cards[a] == undefined) {
-                        cards[a] = i;
-                        document.getElementById('button_' + a).value = i;
+                        cards[a] = Math.floor(i / 2);
+                        document.getElementById('button_' + a).value = '?'; // Math.floor(i / 2);
                         flag = false;
                     }
                 }
