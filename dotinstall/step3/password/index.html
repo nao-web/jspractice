@@ -5,7 +5,7 @@
     <title>jQueryの練習</title>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
-<body>
+<body style="text-align:center;">
 <h1>パスワードジェネレータ</h1>
 <p>桁数：
     <select name="len">
@@ -15,6 +15,12 @@
     <option value="8">8</option>
     <option value="9">9</option>
     <option value="10">10</option>
+	</select>
 </p>
+<p><input type="button" value="生成！" onclick='getPassword();'></p>
+<h2>生成結果</h2>
+<textarea name="" id="result" cols="40" rows="10"></textarea>
+
+
 </body>
 </html>
