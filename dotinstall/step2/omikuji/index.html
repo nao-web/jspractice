@@ -7,11 +7,13 @@
 <body>
 <h1>おみくじ</h1>
 <input type="button" value="あなたの運勢は？" onclick="getOmikuji();">
+<p>結果は<span id="kekka"></span></p>
 <script>
 	function getOmikuji() {
 		var omikuji = ["大吉", "中吉", "凶", "大凶", "末吉", "吉"];
 		var result = Math.floor(Math.random() * omikuji.length);
-		alert(omikuji[result]);
+		// alert(omikuji[result]);
+		document.getElementById('kekka').innerHTML = omikuji[result];
 	}
 </script>
 </body>
