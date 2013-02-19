@@ -27,12 +27,19 @@
                 var chars = [];
                 for (var i = 0; i < dim * dim; i++) {
                 chars.push(dummy);
+                }
 
                 var offset = Math.floor(Math.random() * chars.length);
                 chars.splice(offset, 1, seikai);
 
-                console.log(chars);
-            }
+                for (var i = 1; i <= chars.length; i++) {
+                $('#s'+i).text(chars[i - 1]);
+                $('#s'+i).click(function() {
+                    if ($(this).text() == seikai) {
+                        alert("正解！");
+                    }
+                });
+                }
             }
     </script>
 </body>
