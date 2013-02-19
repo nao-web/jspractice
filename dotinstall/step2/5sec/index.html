@@ -10,7 +10,21 @@
 <p><input type="button" value="stop" onclick="stop();"></p>
 <p id="result"></p>
 <script>
+	var start;
+	var stop;
+	var FIVE_SECOND = 5 * 1000;
 
+	function start() {
+		// start時刻を取得
+		start = new Date().getTime();
+		console.log(start);
+	}
+
+	function stop() {
+		// sotp時刻を取得
+		stop = new Date().getTime();
+		console.log(stop);
+	}
 </script>
 </body>
 </html>
