@@ -6,17 +6,18 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 <body style="text-align:center;">
-    <h1>キャラ診断</h1>
+	<h1>キャラ診断</h1>
     <p><input type="text" id="name" value=""></p>
     <p><input type="button" id="shindan" value="診断!"></p>
     <h2>診断結果</h2>
-    <p>こちらに結果が表示されます。</p>
+    <p id="result">こちらに結果が表示されます。</p>
     <script>
         $('#shindan').click(function() {
             var name = $('#name').val();
             var types = ['勇者','魔法使い','戦士','遊び人','スーパースター'];
             var type = types[Math.floor(Math.random() * types.length)];
-            var result = name + 'さんは「' + character + type + '」タイプです！';
+            var result = name + 'さんは「' + type + '」タイプです！';
+            $('#result').text(result);
         });
     </script>
 </body>
