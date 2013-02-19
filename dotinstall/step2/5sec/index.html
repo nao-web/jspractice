@@ -27,12 +27,13 @@
 		// 差を算出
 		var diff = FIVE_SECOND - (stop - start);
 		//　結果を表示
+		var e = document.getElementById('result');
 		if (diff == 0) {
-
+			e.innerHTML = 'ぴったしすごい！';
 		} else if (diff > 0) {
-
+			e.innerHTML = (diff / 1000) + '秒、速い！' 
 		} else {
-			
+			e.innerHTML = (diff / 1000) + '秒、遅い！' 
 		}
 	}
 </script>
