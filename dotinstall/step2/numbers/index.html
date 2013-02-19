@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>JavaScriptの練習</title>
 </head>
-<body>
+<body onload="initButtons();">
 	<h1>小さい数字からタッチ！</h1>
 	<input type="button" id="button_0" value="" />
 	<input type="button" id="button_1" value="" />
@@ -16,16 +16,6 @@
 	<input type="button" id="button_7" value="" />
 	<input type="button" id="button_8" value="" />
 	<script>
-	    // buttons
-        // 0 -> buttons[2]
-        // 1 -> buttons[5]
-        // ...
-        // 8 -> buttons[0]
-        
-        // buttons [5]=>0, [3]=>1, [8]=>2
-        // i       1
-        // flag    true
-        // a       3
     	function initButtons() {
 	        var buttons = [];
 	        for (var i=0; i<=8; i++) {
@@ -33,15 +23,13 @@
 	            while (flag) {
 	                var a = Math.floor(Math.random() * 9);
 	                if (buttons[a] == undefined) {
-	                    buttons[a] = i;
-	                    flag = false;
-	                }
-	            }
-	        }
-	        console.dir(buttons);
-	    }
-	    
-	    initButtons();
+                            buttons[a] = i;
+                            document.getElementById('button_'+a).value = i;
+                            flag = false;
+                        }
+	            	}
+	        	}
+	    	}
 	</script>
 </body>
 </html>
