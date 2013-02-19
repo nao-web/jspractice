@@ -14,7 +14,16 @@
             var dummy = '問';
             var seikai = '間';
             var dim = 5;
-        }
+
+            var cells = '';
+                for (var i = 1; i <= dim * dim; i++) {
+                    cells += '<span id="s' + i + '"></span>';
+                    if (i % dim == 0) {
+                        cells += '<br />';
+                    }
+                }
+                $('#cells').html(cells);
+            }
     </script>
 </body>
 </html>
