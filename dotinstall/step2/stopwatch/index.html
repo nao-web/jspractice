@@ -12,20 +12,22 @@
 <input type="button" value="リセット" onclick="reset();">
 <script>
 var sec = 0.0;
+var timerId;
 
 function start() {
-	setInterval(function() {
+	timerId = setInterval(function() {
 		sec += 0.1;
 		document.getElementById('sec').innerHTML = Math.round(sec * 10) / 10;
 	}, 100);
 }
 
 function stop() {
-
+	clearInterval(timerId);
 }
 
 function reset() {
-
+	document.getElementById('sec').innerHTML = '0.0';
+	sec = 0.0;
 }
 </script>
 </body>
