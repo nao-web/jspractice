@@ -9,8 +9,8 @@
 <input type="button" value="あなたの運勢は？" onclick="getOmikuji();">
 <script>
 	function getOmikuji() {
-		var omikuji = ["大吉", "中吉", "凶"];
-		var result = Math.floor(Math.random() * 3);
+		var omikuji = ["大吉", "中吉", "凶", "大凶", "末吉", "吉"];
+		var result = Math.floor(Math.random() * omikuji.length);
 		alert(omikuji[result]);
 	}
 </script>
