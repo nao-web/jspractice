@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>JavaScriptの練習</title>
 </head>
-<body>
+<body onload="initCards();">
     <h1>神経衰弱</h1>
+    <p>Score: <span id="score"> </span></p>
     <input type="button" id="button_0" value="" onclick="flip(0);" />
     <input type="button" id="button_1" value="" onclick="flip(1);" />
     <input type="button" id="button_2" value="" onclick="flip(2);" />
@@ -29,6 +30,12 @@
         var cardsCount = 0;
         var cards = [];
         var score = 0;
+        var timerId;
+
+        function runTimer() {
+            document.getElementById('score').innerHTML = score++;
+            timerId = setTimeout(runTimer, 10);
+        }
 
         function initCards() {
             for (var i = 0; i <= 15; i++) {
@@ -42,8 +49,8 @@
                     }
                 }
             }
+            runTimer();
         }
-        initCards();
 
         function flip(n) {
             document.getElementById('button_' + n).value = cards[n];
@@ -53,6 +60,7 @@
                     cardsCount++;
                     if (cardsCount > 7) {
                         alert('Game Over! Your Score:'+score);
+                        clearTimeout(timerId);
                     }
                 } else {
                     setTimeout(function() {
