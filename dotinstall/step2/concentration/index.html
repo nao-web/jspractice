@@ -6,23 +6,25 @@
 </head>
 <body>
     <h1>神経衰弱</h1>
-    <input type="button" id="button_0" value="" />
-    <input type="button" id="button_1" value="" />
-    <input type="button" id="button_2" value="" />
-    <input type="button" id="button_3" value="" /><br>
-    <input type="button" id="button_4" value="" />
-    <input type="button" id="button_5" value="" />
-    <input type="button" id="button_6" value="" />
-    <input type="button" id="button_7" value="" /><br>
-    <input type="button" id="button_8" value="" />
-    <input type="button" id="button_9" value="" />
-    <input type="button" id="button_10" value="" />
-    <input type="button" id="button_11" value="" /><br>
-    <input type="button" id="button_12" value="" />
-    <input type="button" id="button_13" value="" />
-    <input type="button" id="button_14" value="" />
-    <input type="button" id="button_15" value="" />
+    <input type="button" id="button_0" value="" onclick="flip(0);" />
+    <input type="button" id="button_1" value="" onclick="flip(1);" />
+    <input type="button" id="button_2" value="" onclick="flip(2);" />
+    <input type="button" id="button_3" value="" onclick="flip(3);" /><br>
+    <input type="button" id="button_4" value="" onclick="flip(4);" />
+    <input type="button" id="button_5" value="" onclick="flip(5);" />
+    <input type="button" id="button_6" value="" onclick="flip(6);" />
+    <input type="button" id="button_7" value="" onclick="flip(7);" /><br>
+    <input type="button" id="button_8" value="" onclick="flip(8);" />
+    <input type="button" id="button_9" value="" onclick="flip(9);" />
+    <input type="button" id="button_10" value="" onclick="flip(10);" />
+    <input type="button" id="button_11" value="" onclick="flip(11);" /><br>
+    <input type="button" id="button_12" value="" onclick="flip(12);" />
+    <input type="button" id="button_13" value="" onclick="flip(13);" />
+    <input type="button" id="button_14" value="" onclick="flip(14);" />
+    <input type="button" id="button_15" value="" onclick="flip(15);" />
     <script>
+        var cardSelected = false;
+
         function initCards() {
             var cards = [];
             for (var i = 0; i <= 15; i++) {
@@ -38,6 +40,14 @@
             }
         }
         initCards();
+
+        function flip(n) {
+            if (cardSelected) {
+            
+            } else {
+
+            }
+        }
     </script>
 </body>
 </html>
