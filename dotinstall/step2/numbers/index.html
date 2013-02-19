@@ -16,7 +16,17 @@
 	<input type="button" id="button_7" value="" />
 	<input type="button" id="button_8" value="" />
 	<script>
-	    function initButtons() {
+	    // buttons
+        // 0 -> buttons[2]
+        // 1 -> buttons[5]
+        // ...
+        // 8 -> buttons[0]
+        
+        // buttons [5]=>0, [3]=>1, [8]=>2
+        // i       1
+        // flag    true
+        // a       3
+    	function initButtons() {
 	        var buttons = [];
 	        for (var i=0; i<=8; i++) {
 	            var flag = true;
