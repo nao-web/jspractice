@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>jQueryの練習</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 </head>
 <body>
 <h1>残り文字数チェッカー</h1>
 <textarea name="" id="memo" cols="40" rows="10"> </textarea>
-<div id="coiunt"> </div>
+<div id="count"> </div>
 <script>
 $(function() {
+    var limit = 140;
+    $('#count').text(limit);
 
+    $('#memo').keyup(function() {
+        count = (limit - $(this).val().length);
+        $('#count').text(count);
+    });
 });
 </script>
 </body>
