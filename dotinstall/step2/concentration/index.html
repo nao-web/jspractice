@@ -23,7 +23,21 @@
     <input type="button" id="button_14" value="" />
     <input type="button" id="button_15" value="" />
     <script>
-
+        function initCards() {
+            var cards = [];
+            for (var i = 0; i <= 15; i++) {
+                var flag = true;
+                while (flag) {
+                    var a = Math.floor(Math.random() * 16);
+                    if (cards[a] == undefined) {
+                        cards[a] = i;
+                        document.getElementById('button_' + a).value = i;
+                        flag = false;
+                    }
+                }
+            }
+        }
+        initCards();
     </script>
 </body>
 </html>
