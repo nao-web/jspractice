@@ -30,8 +30,16 @@
 	            	}
 	        	}
 	    	}
+	    	var currentNumber = 0;
 
 	    	function touched(n) {
+	    		var touchedNumber = document.getElementById('button_'+n).value;
+                if (touchedNumber == currentNumber) {
+                    currentNumber++;
+                    document.getElementById('button_'+n).value = ' ';
+                } else {
+                    alert("Wrong Number!");
+                }
             }
 	</script>
 </body>
