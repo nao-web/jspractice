@@ -44,7 +44,7 @@
                     var a = Math.floor(Math.random() * 16);
                     if (cards[a] == undefined) {
                         cards[a] = Math.floor(i / 2);
-                        document.getElementById('button_' + a).value = '?'; // Math.floor(i / 2);
+                        document.getElementById('button_' + a).value = '? ('+ cards[a] +')';
                         flag = false;
                     }
                 }
