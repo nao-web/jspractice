@@ -27,7 +27,16 @@
     <div id="box2" class="box"></div>
     <div id="box3" class="box"></div>
     <script>
-    
+     $(function() {
+            $(window).scroll(function() {
+                var dy = $(this).scrollTop();
+                console.log(dy);
+                
+                $('#box1').css('top', 10 + dy / 2);
+                $('#box2').css('top', 10 + dy / 5);
+                $('#box3').css('top', 10 + dy / 7);
+            });
+        });
     </script>
 </body>
 </html>
