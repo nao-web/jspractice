@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryの練習</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body style="text-align:center;">
+<h1>パスワードジェネレータ</h1>
+<p>桁数：
+    <select name="len">
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+	</select>
+</p>
+<p>記号を含める？</p>
+<input type="radio" name="complex" value="1" checked> Yes
+<input type="radio" name="complex" value="0"> No
+
+<p><input type="button" value="生成！" onclick='getPassword();'></p>
+<h2>生成結果</h2>
+<textarea name="" id="result" cols="40" rows="10"></textarea>
+<script>
+	function getPassword() {
+		var len = $('select[name=len]>option:selected').val();
+		var complex = $('input[name=complex]:checked').val();
+		var seed0 = '0123456789qwertyuioplkjhgfdsazxcvbnm';
+		var seed1 = "!#$%&'()";
+		var seed = '';
+		seed = (complex == 1) ? seed0 + seed1 : seed0;
+
+		var pwd = '';
+		while (len--) {
+			pwd += seed[Math.floor(Math.random() * seed.length)];
+		}
+		$('#result').text(pwd);
+	}
+</script>
+</body>
+</html>

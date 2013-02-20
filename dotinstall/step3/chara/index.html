@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryの練習</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body style="text-align:center;">
+	<h1>キャラ診断</h1>
+    <p><input type="text" id="name" value=""></p>
+    <p><input type="button" id="shindan" value="診断!"></p>
+    <h2>診断結果</h2>
+    <p id="result">こちらに結果が表示されます。</p>
+    <div id="tweet"></div>
+    <script>
+        $('#shindan').click(function() {
+            if ($('#name').val() == '') {
+                alert('名前を入力してください！');
+                return false;
+            }
+            var name = $('#name').val();
+            var types = ['勇者','魔法使い','戦士','遊び人','スーパースター'];
+            var type = types[Math.floor(Math.random() * types.length)];
+            var characters = ['賢い','勇ましい','かわいい','情けない','頼りない'];
+            var character = characters[Math.floor(Math.random() * characters.length)];
+            var result = name + 'さんは「' + character + type + '」タイプです！';
+            $('#result').text(result);
+            var tweetLink = '<a href="https://twitter.com/intent/tweet?text='+ encodeURIComponent(result) +'&hashtags=dotinstall">ツイートする</a>';
+            $('#tweet').html(tweetLink);
+        });
+    </script>
+</body>
+</html>

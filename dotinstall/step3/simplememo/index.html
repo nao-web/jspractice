@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryの練習</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<h1>メモ帳</h1>
+ <textarea id="memo" rows="10" cols="40" name="memo"></textarea>
+    <p id="message" style="display:none;">Saving...</p>
+    <p><input type="button" id="clear" value="消去"></p>
+</body>
+
+<script>
+$(function() {
+
+	if (localStorage.getItem('memo')) {
+		$('#memo').val(localStorage.getItem('memo'));
+	}
+
+	$('#clear').click(function() {
+        $('#memo').val('');
+        localStorage.removeItem('memo');
+    });
+
+	$('#memo').bind('keyup', function() {
+        localStorage.setItem('memo', $('#memo').val());
+    });
+});
+</script>
+</html>
