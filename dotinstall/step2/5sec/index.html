@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScriptの練習</title>
+</head>
+<body>
+<h1>5秒でキメろ！</h1>
+<p><input type="button" value="start" onclick="start();"></p>
+<p><input type="button" value="stop" onclick="stop();"></p>
+<p id="result"></p>
+<script>
+	var start;
+	var stop;
+	var FIVE_SECOND = 5 * 1000;
+
+	function start() {
+		// start時刻を取得
+		start = new Date().getTime();
+		console.log(start);
+	}
+
+	function stop() {
+		// sotp時刻を取得
+		stop = new Date().getTime();
+		console.log(stop);
+		// 差を算出
+		var diff = FIVE_SECOND - (stop - start);
+		//　結果を表示
+		var e = document.getElementById('result');
+		if (diff == 0) {
+			e.innerHTML = 'ぴったしすごい！';
+		} else if (diff > 0) {
+			e.innerHTML = (diff / 1000) + '秒、速い！' 
+		} else {
+			e.innerHTML = (diff / 1000) + '秒、遅い！' 
+		}
+	}
+</script>
+</body>
+</html>

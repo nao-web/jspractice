@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptの練習</title>
+</head>
+<body onload="initCards();">
+    <h1>神経衰弱</h1>
+    <p>Score: <span id="score"> </span></p>
+    <input type="button" id="button_0" value="" onclick="flip(0);" />
+    <input type="button" id="button_1" value="" onclick="flip(1);" />
+    <input type="button" id="button_2" value="" onclick="flip(2);" />
+    <input type="button" id="button_3" value="" onclick="flip(3);" /><br>
+    <input type="button" id="button_4" value="" onclick="flip(4);" />
+    <input type="button" id="button_5" value="" onclick="flip(5);" />
+    <input type="button" id="button_6" value="" onclick="flip(6);" />
+    <input type="button" id="button_7" value="" onclick="flip(7);" /><br>
+    <input type="button" id="button_8" value="" onclick="flip(8);" />
+    <input type="button" id="button_9" value="" onclick="flip(9);" />
+    <input type="button" id="button_10" value="" onclick="flip(10);" />
+    <input type="button" id="button_11" value="" onclick="flip(11);" /><br>
+    <input type="button" id="button_12" value="" onclick="flip(12);" />
+    <input type="button" id="button_13" value="" onclick="flip(13);" />
+    <input type="button" id="button_14" value="" onclick="flip(14);" />
+    <input type="button" id="button_15" value="" onclick="flip(15);" />
+    <script>
+        var cardSelected = false;
+        var currentCard;
+        var openedButtonId;
+        var cardsCount = 0;
+        var cards = [];
+        var score = 0;
+        var timerId;
+
+        function runTimer() {
+            document.getElementById('score').innerHTML = score++;
+            timerId = setTimeout(runTimer, 10);
+        }
+
+        function initCards() {
+            for (var i = 0; i <= 15; i++) {
+                var flag = true;
+                while (flag) {
+                    var a = Math.floor(Math.random() * 16);
+                    if (cards[a] == undefined) {
+                        cards[a] = Math.floor(i / 2);
+                        document.getElementById('button_' + a).value = '?';
+                        flag = false;
+                    }
+                }
+            }
+            runTimer();
+        }
+
+        function flip(n) {
+            document.getElementById('button_' + n).value = cards[n];
+            if (cardSelected) {
+
+                if (currentCard == cards[n]) {
+                    cardsCount++;
+                    if (cardsCount > 7) {
+                        alert('Game Over! Your Score:'+score);
+                        clearTimeout(timerId);
+                    }
+                } else {
+                    setTimeout(function() {
+                    document.getElementById('button_' + n).value = '?';
+                    document.getElementById('button_' +openedButtonId).value = '?';
+                }, 500);
+
+                }
+                cardSelected = false;
+            } else {
+                currentCard = cards[n];
+                openedButtonId = n;
+                cardSelected = true;
+            }
+        }
+    </script>
+</body>
+</html>
