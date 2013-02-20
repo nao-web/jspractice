@@ -26,7 +26,14 @@
         #bg3 {
             background: url(http://farm9.staticflickr.com/8232/8456675755_a088461016_c.jpg) no-repeat;
         }
-
+        #msg {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: Veranda, Arail, sans-serif;
+            color: orange;
+            opacity: 0;
+            position: fixed;
+        }
     </style>
 </head>
 <body>
@@ -51,9 +58,18 @@
                 }
 
                 if (dy > 680) {
-                    $('#bg3').css('background-position-y',(dy - 680) * 2 );
+                    $('#bg3').css('background-position-y',(dy - 680) * 2);
                 } else {
                     $('#bg').css('background-position-y',0);
+                }
+
+                if (dy > 680) {
+                    $('#msg').css('opacity', (dy - 680) / 340);
+                    $('#msg').css('top', 200);
+                    var dx = (dy - 680) > 400 ? 400 : (dy - 680);
+                    $("#msg").css('left', dx);
+                } else {
+                    $('#msg').css('opacity',0);
                 }
             });
         });
