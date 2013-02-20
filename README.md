@@ -32,7 +32,7 @@
 
 #ドットインストール
 
-以下のレッスンのサンプルコードを写経
+以下のレッスンからサンプルコードを写経
 
 ##STEP2 手軽にプログラミングができるJavaScriptを覚えよう
 
@@ -70,3 +70,12 @@
 * [JavaScriptで作る「間違い探しゲーム」](http://dotinstall.com/lessons/doubt_js)
 
 * [パララックスサイトを作ろう](http://dotinstall.com/lessons/parallax_html)
+
+
+#Web制作の現場で使う jQueryデザイン入門
+
+第3章の 3-1から3-13 までを写経
+
+* [サイト](http://ascii.asciimw.jp/books/books/detail/978-4-04-868411-8.shtml) 
+
+* [サンプルコード](http://go.ascii.jp/?jquery_sample)
