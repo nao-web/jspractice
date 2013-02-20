@@ -30,7 +30,6 @@
     </style>
 </head>
 <body>
-    <h1>パララックスサイト</h1>
 	<div id="bg1" class="box"></div>
     <div id="bg2" class="box"></div>
     <div id="bg3" class="box"></div>
@@ -40,6 +39,14 @@
             $(window).scroll(function() {
                 var dy = $(this).scrollTop();
                 console.log(dy);
+
+                $('#bg1').css('background-position-y',dy);
+
+                if (dy > 340) {
+                    $('#bg2').css('background-position-y',dy - 340);
+                } else {
+                    $('#bg2').css('background-position-y',0);
+                }
             });
         });
     </script>
