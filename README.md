@@ -29,3 +29,44 @@
 * 7章 デザインパターン
 
 * 8章 DOMとブラウザのパターン
+
+#ドットインストール
+
+以下のレッスンのサンプルコードを写経
+
+##STEP2 手軽にプログラミングができるJavaScriptを覚えよう
+
+* [JavaScriptで作る「簡単おみくじ」](http://dotinstall.com/lessons/omikuji_js)
+
+* [JavaScriptで作る「あなたの誕生日診断」](http://dotinstall.com/lessons/date_js)
+
+* [JavaScriptで作るスロットマシーン](http://dotinstall.com/lessons/slot_js)
+
+* [JavaScriptで作るストップウォッチ](http://dotinstall.com/lessons/stop_watch_js)
+
+* [JavaScriptで作る「5秒でキメろ！」](http://dotinstall.com/lessons/just_five_js)
+
+* [JavaScriptで作る「王様ゲーム」](http://dotinstall.com/lessons/king_game_js) 
+
+* [JavaScriptで作る「割り勘電卓」](http://dotinstall.com/lessons/go_dutch_js)
+
+* [JavaScriptで作る「数字タッチゲーム](http://dotinstall.com/lessons/numbers_js)
+
+* [JavaScriptで作る「神経衰弱」](http://dotinstall.com/lessons/memory_js)
+
+
+##STEP3 JavaScriptをもっと便利にしてくれるjQueryを覚えよう
+
+* [JavaScriptで作る残り文字数チェッカー](http://dotinstall.com/lessons/char_checker_js)
+
+* [｢このページの先頭へ｣を実装する](http://dotinstall.com/lessons/scroll_js)
+
+* [JavaScriptで作る「パスワードジェネレータ」](http://dotinstall.com/lessons/pwd_generator_js)
+
+* [JavaScriptで作る「キャラ診断」](http://dotinstall.com/lessons/shindan_js)
+
+* [HTML5で作る「シンプルメモ帳」](http://dotinstall.com/lessons/memo_html5)
+
+* [JavaScriptで作る「間違い探しゲーム」](http://dotinstall.com/lessons/doubt_js)
+
+* [パララックスサイトを作ろう](http://dotinstall.com/lessons/parallax_html)
