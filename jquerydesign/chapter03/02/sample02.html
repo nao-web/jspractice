@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <style>
+       * {
+        margin:0;
+        padding:0;
+        border:0;
+       }
+       body {
+        background:black;
+       }
+       #container {
+        width:1000px;
+        margin:20px auto;
+       }
+       #navi {
+        width:300px;
+        float:left;
+       }
+       #navi ul {
+        height:460px;
+       }
+       #navi ul li {
+        width:150px;
+        float:left;
+       }
+       #navi ul li img {
+        border: 3px solid white; 
+       }
+       #main {
+        width:650px;
+        float:right;
+       }
+       #main img {
+        position:absolute;
+        border:3px solid white;
+       }
+    </style>
+        <script type="text/javascript">
+$(function(){
+    $("#navi a").click(function(){
+        $("#main img").before("<img src='" + $(this)
+                      .attr("href") + "' alt = ''>");
+        $("#main img:last").fadeOut("fast", function () {
+          $(this).remove();
+        });
+        return false;
+    });
+});
+        </script>
+</head>
+<body>
+    <div id="container">
+        <div id="navi">
+            <ul>
+                <li><a href="img/photo1.jpg"><img src="img/photo1_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo2.jpg"><img src="img/photo2_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo3.jpg"><img src="img/photo3_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo4.jpg"><img src="img/photo4_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo5.jpg"><img src="img/photo5_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo6.jpg"><img src="img/photo6_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo7.jpg"><img src="img/photo7_thum.jpg" alt="" /></a></li>
+                <li><a href="img/photo8.jpg"><img src="img/photo8_thum.jpg" alt="" /></a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <img src="img/photo1.jpg" alt="あじさい" />
+        </div>
+    </div>
+    </body>
+</html>
