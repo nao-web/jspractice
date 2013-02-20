@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <style>
+        *{
+          margin:0;
+          padding:0;
+          border:0;
+        }
+        body{
+          background:black;
+        }
+        #container{
+          width:1000px;
+          margin:20px auto;
+        }
+        #navi{
+          width:300px;
+          float:left;
+        }
+        #navi ul{
+          height:460px;
+        }
+        #navi li{
+          list-style-type:none;
+          width:150px;
+          float:left;
+        }
+        #navi li img{
+          border:3px solid white;
+        }
+        #navi{
+          overflow:hidden;
+        }
+        #navi .pageWrap{
+          width:900px;
+        }
+        #navi .pageWrap .page{
+          width:300px;
+          float:left;
+        }
+        #navi p{
+          clear:both;
+          width:300px;
+          padding:10px 0;
+          text-align:center;
+        }
+        #navi p img{
+          cursor:pointer;
+        }
+        #main{
+          width:650px;
+          float:right;
+        }
+        #main img{
+          position:absolute;
+          border:3px solid white;
+        }
+    </style>
+    <script>
+    $(function(){
+    $("#navi a").click(function(){
+      $("#main img").before("<img src='"+$(this).attr("href")+"' alt=''>");
+      $("#main img:last").fadeOut("fast",function(){
+        $(this).remove();
+      });
+      return false;
+    })
+    $("img.next").click(function(){
+      $("#navi .pageWrap").animate({
+        marginLeft : parseInt($("#navi .pageWrap").css("margin-left"))-300+"px"
+      },"fast");
+    });
+    $("img.prev").click(function(){
+      $("#navi .pageWrap").animate({
+        marginLeft : parseInt($("#navi .pageWrap").css("margin-left"))+300+"px"
+      },"fast");
+    });
+    });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navi">
+        <div class="pageWrap">
+          <div  class="page">
+            <ul>
+              <li><a href="img/photo1.jpg"><img src="img/photo1_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo2.jpg"><img src="img/photo2_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo3.jpg"><img src="img/photo3_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo4.jpg"><img src="img/photo4_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo5.jpg"><img src="img/photo5_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo6.jpg"><img src="img/photo6_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo7.jpg"><img src="img/photo7_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo8.jpg"><img src="img/photo8_thum.jpg" alt="" /></a></li>
+            </ul>
+            <p><img src="img/btn_next.jpg" alt="" class="next" /></p>
+          </div>
+          <div  class="page">
+            <ul>
+              <li><a href="img/photo9.jpg"><img src="img/photo9_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo10.jpg"><img src="img/photo10_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo11.jpg"><img src="img/photo11_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo12.jpg"><img src="img/photo12_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo13.jpg"><img src="img/photo13_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo14.jpg"><img src="img/photo14_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo15.jpg"><img src="img/photo15_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo16.jpg"><img src="img/photo16_thum.jpg" alt="" /></a></li>
+            </ul>
+            <p><img src="img/btn_prev.jpg" alt="" class="prev" /> <img src="img/btn_next.jpg" alt="" class="next" /></p>
+          </div>
+          <div  class="page">
+            <ul>
+              <li><a href="img/photo17.jpg"><img src="img/photo17_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo18.jpg"><img src="img/photo18_thum.jpg" alt="" /></a></li>
+              <li><a href="img/photo19.jpg"><img src="img/photo19_thum.jpg" alt="" /></a></li>
+            </ul>
+            <p><img src="img/btn_prev.jpg" alt="" class="prev" /></p>
+          </div>
+        </div>
+      </div>
+      <div id="main">
+        <img src="img/photo1.jpg" alt="" />
+      </div>
+    </div>
+    </body>
+</html>

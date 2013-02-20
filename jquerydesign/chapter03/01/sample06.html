@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample1</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+     <style>
+       table {
+        margin: 100px auto;
+       }
+       .even {
+        background: #f2f2f2;
+       }
+       th {
+        background: #222222;
+        color:white;
+       }
+       .odd {
+        background:#444444;
+       }
+       th, td {
+        padding:5px;
+        font-size:small;
+       }
+
+       .hover {
+        background: #b2d8ff;
+       }
+    </style>
+</head>
+<body>
+<script>
+$(function () {
+    $("th:nth-child(odd)").addClass("odd");
+    $("tr:nth-child(even)").addClass("even");
+
+    $("tr:not(:first-child)").mouseover(function() {
+        $(this).addClass("hover");
+    }).mouseout(function () {
+        $(this).removeClass("hover");
+    });
+
+    $("td").mouseover(function () {
+        $("td:nth-child("+($("td").index(this)%$("th").size()+1)+")")
+                                  .addClass("hover");
+    }).mouseout(function () {
+        $("td:nth-child("+($("td").index(this)%$("th").size()+1)+")")
+                                  .removeClass("hover");
+    })
+});
+</script>
+<table>
+    <tr>
+        <th>no</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Phone</th>
+        <th>Mail</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Yamada Tarou</td>
+        <td>1979-06-05</td>
+        <td>090-1234-5678</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Tanaka Daisuke</td>
+        <td>1975-11-05</td>
+        <td>090-9999-9999</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Sato Hanako</td>
+        <td>1985-11-23</td>
+        <td>090-9876-5432</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Yamada Jiro</td>
+        <td>1979-06-05</td>
+        <td>090-9999-7777</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Tanaka Hanako</td>
+        <td>1985-11-23</td>
+        <td>090-9999-7777</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Nishihata Kazuma</td>
+        <td>1975-06-05</td>
+        <td>090-1234-5678</td>
+        <td>example@to-r.net</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Shimizu Daisuke</td>
+        <td>1985-11-23</td>
+        <td>080-9876-5432</td>
+        <td>example@to-r.net</td>
+    </tr>
+     <tr>
+        <td>8</td>
+        <td>Tanaka Jiro</td>
+        <td>1975-11-05</td>
+        <td>090-9999-7777</td>
+        <td>example@to-r.net</td>
+    </tr>
+</table>
+
+</body>
+</html>
