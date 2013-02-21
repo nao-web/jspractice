@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample3</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			$("p.tooltip").hide();
+			$("a").mouseover(function(){
+				$("p.tooltip").show().css({
+					"top":$(this).offset().top-20+"px",
+					"left":$(this).offset().left+$(this).width()+10+"px"
+				});
+			}).mouseout(function(){
+				setTimeout(function(){
+					$("p.tooltip").hide();
+				},3000);
+			});
+		});
+	</script>
+	<style>
+		h1{
+			width:80%;
+			margin:10px auto;
+		}
+		p{
+			margin:10px 10%;
+		}
+		p.tooltip{
+			line-height:1.5;
+			color:white;
+			margin:0;
+			width:185px;
+			height:86px;
+			position:absolute;
+			padding : 10px 20px 20px 10px;
+			background:url("img/tooltip.png");
+			font-size:small;
+		}
+		* html p.tooltip{
+			background:none;
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/tooltip.png',sizingMethod='scale');
+		}
+	</style>
+	</head>
+	<body>
+		<h1>tooltip sample</h1>
+		<p>test, <a href="#">tooltip sample</a> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa　png</p>
+
+		<p>test</p>
+
+		<p>test</p>
+
+		<p>hogehoge</p>
+
+		<p>test</p>
+		<p class="tooltip">test<br /><strong>test<br />test</strong><br />test</p>
+
+	</body>
+</html>
