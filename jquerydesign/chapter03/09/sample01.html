@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<title>sample1</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style>
+		html,body{
+			margin:0;
+			padding:0;
+			height:100%;
+		}
+		h1{
+			margin:20px 50px;
+			font-size:large;
+			border-left:10px solid #7BAEB5;
+			border-bottom:1px solid #7BAEB5;
+			padding:10px;
+			width:600px;
+		}
+		ul{
+			width:700px;
+		}
+		ul li{
+			float:left;
+			list-style-type:none;
+		}
+		ul li img{
+			border:0;
+			margin:10px;
+		}
+		div#glayLayer{
+			position:fixed;
+			left:0;
+			top:0;
+			height:100%;
+			width:100%;
+			background:black;
+			filter:alpha(opacity=60);
+			opacity: 0.60;
+		}
+		#overLayer{
+			position: fixed;
+			top:50%;
+			left:50%;
+			margin-top:-244px;
+			margin-left:-325px;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>jQueryを利用したモーダルウィンドウの作成</h1>
+		<ul>
+			<li><a href="images/photo1.jpg" class="modal"><img src="img/photo1_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo2.jpg" class="modal"><img src="img/photo2_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo3.jpg" class="modal"><img src="img/photo3_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo4.jpg" class="modal"><img src="img/photo4_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo5.jpg" class="modal"><img src="img/photo5_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo6.jpg" class="modal"><img src="img/photo6_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo7.jpg" class="modal"><img src="img/photo7_thum.jpg" alt="" /></a></li>
+			<li><a href="img/photo8.jpg" class="modal"><img src="img/photo8_thum.jpg" alt="" /></a></li>
+		</ul>
+		<div id='glayLayer'></div>
+		<div id='overLayer'><img src='img/photo5.jpg' /></div>
+	</body>
+</html>
