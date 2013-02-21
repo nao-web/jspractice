@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			$("div.tooltip").css("opacity","0.9").hide();
+			$("a").mouseover(function(){
+				$("div.tooltip").fadeIn().css({
+					"top":$(this).offset().top-20+"px",
+					"left":$(this).offset().left+$(this).width()+"px"
+				});
+			}).mouseout(function(){
+				$("div.tooltip").fadeOut();
+			});
+		});
+	</script>
+	<style>
+		body{
+			background:black;
+			color:white;
+		}
+		a{
+			color:#FF9900;
+		}
+		h1{
+			width:80%;
+			margin:10px auto;
+		}
+		p{
+			position:relative;
+			margin:10px 10%;
+		}
+		div.tooltip{
+			width:230px;
+			position:absolute;
+		}
+		div.tooltip p{
+			line-height:1.5;
+			margin:0;
+			font-size:small;
+			background:url("img/tooltipBody.gif") top right;
+			padding:10px 5px 0 40px;
+		}
+		div.tooltip img{
+			vertical-align:top;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>tooltip sample</h1>
+		<p>test1<a href="#">tooltip sample</a>
+			<div class="tooltip">
+				<p>tooltip sample<br />
+					<strong>tooptip<br />
+						sample</strong><br />
+						test1
+				</p>
+				<img src="img/tooltipFoot.gif">
+		</div>
+
+		<p>test2</p>
+
+		<p>test3</p>
+
+	</body>
+</html>

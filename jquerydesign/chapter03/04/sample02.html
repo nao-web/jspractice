@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		$("ul.panel li:not("+$("ul.tab li a.selected").attr("href")+")").hide();
+		$("ul.tab li a").click(function(){
+			$("ul.tab li a").removeClass("selected");
+			$(this).addClass("selected");
+			$("ul.panel li").slideUp("fast");
+			$($(this).attr("href")).slideDown("fast");
+			return false;
+		});
+	});
+	</script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#container{
+			width:500px;
+			margin:50px auto;
+		}
+		ul.tab{
+			padding:0;
+		}
+		ul.tab li{
+			list-style-type:none;
+			width:100px;
+			height:40px;
+			float:left;
+		}
+		ul.tab li a{
+			outline:none;
+			background:url("img/tab.jpg");
+			display:block;
+			color:blue;
+			line-height:40px;
+			text-align:center;
+		}
+		ul.tab li a.selected{
+			background:url("img/tab_selected.jpg");
+			text-decoration:none;
+			color:#333;
+			cursor:default;
+		}
+		ul.panel{
+			clear:both;
+			border:1px solid #9FB7D4;
+			border-top:none;
+			padding:0;
+		}
+		ul.panel li{
+			list-style-type:none;
+			padding:10px;
+			text-indent:1em;
+			color:#333;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul class="tab">
+				<li><a href="#tab1" class="selected">JavaScript</a></li>
+				<li><a href="#tab2">CSS</a></li>
+				<li><a href="#tab3">HTML</a></li>
+				<li><a href="#tab4">jQuery</a></li>
+				<li><a href="#tab5">XHTML</a></li>
+			</ul>
+			<ul class="panel">
+				<li id="tab1">
+				test1
+				<li id="tab2">
+				test2
+				</li>
+				<li id="tab3">
+				test3
+				</li>
+				<li id="tab4">
+				test4
+				</li>
+				<li id="tab5">
+				test5
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

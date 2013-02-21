@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample3</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		$("img[src='img/jquery.jpg']").mouseover(function(){
+			$(this).attr("src","img/jquery_on.jpg");
+		}).mouseout(function(){
+			$(this).attr("src","img/jquery.jpg");
+		});
+		
+		$("img[src='img/javascript.jpg']").mouseover(function(){
+			$(this).attr("src","img/javascript_on.jpg");
+		}).mouseout(function(){
+			$(this).attr("src","img/javascript.jpg");
+		});
+		
+		$("img[src='img/css.jpg']").mouseover(function(){
+			$(this).attr("src","img/css_on.jpg");
+		}).mouseout(function(){
+			$(this).attr("src","img/css.jpg");
+		});
+		
+		$("img[src='img/html.jpg']").mouseover(function(){
+			$(this).attr("src","img/html_on.jpg");
+		}).mouseout(function(){
+			$(this).attr("src","img/html.jpg");
+		});
+	});
+	</script>
+	<style>
+		li{
+			display:inline;
+			list-style-type:none;
+		}
+		img{
+			border:none;
+		}
+	</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="#"><img src="img/jquery.jpg" alt="jQuery" /></a></li><!--
+			--><li><a href="#"><img src="img/javascript.jpg" alt="javascript" /></a></li><!--
+			--><li><a href="#"><img src="img/css.jpg" alt="CSS" /></a></li><!--
+			--><li><a href="#"><img src="img/html.jpg" alt="HTML" /></a></li>
+		</ul>
+	</body>
+</html>
