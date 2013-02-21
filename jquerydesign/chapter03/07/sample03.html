@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<title>sample3</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style>
+		div{
+			width:200px;
+			height:100px;
+			border:1px solid red;
+		}
+		#sample1{
+			background:url("img/alpha.png");
+		}
+		#sample2{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='scale');
+		}
+		#sample3{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='image');
+		}
+		#sample4{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='crop');
+		}
+	</style>
+	</head>
+	<body>
+		<p>background</p>
+		<div id="sample1"></div>
+		<p>scale</p>
+		<div id="sample2"></div>
+		<p>image</p>
+		<div id="sample3"></div>
+		<p>crop</p>
+		<div id="sample4"></div>
+	</body>
+</html>
