@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-	<title>sample2</title>
+	<title>sample4</title>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>
 		$(function(){
@@ -15,7 +15,7 @@
 					
 					$(this)
 						.data("src",$(this).attr("src"))
-						.attr("src","img/transparent.gif")
+						.attr("src","images/transparent.gif")
 						.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+$(this).data("src")+"',sizingMethod='scale')");
 					
 				}).mouseover(function(){
@@ -55,15 +55,15 @@
 			height:40px;
 			border:none;
 		}
-	</style>
+		</style>
 	</head>
 	<body>
 		<div>
 			<ul>
-				<li><a href="#"><img src="img/transparent.gif" alt="jQuery" class="jquery" /></a></li>
-				<li><a href="#"><img src="img/transparent.gif" alt="javascript" class="javascript" /></a></li>
-				<li><a href="#"><img src="img/transparent.gif" alt="CSS" class="css" /></a></li>
-				<li><a href="#"><img src="img/transparent.gif" alt="HTML" class="html" /></a></li>
+				<li><a href="#"><img src="img/jquery.png" alt="jQuery" class="rollover" /></a></li>
+				<li><a href="#"><img src="img/javascript.png" alt="javascript" class="rollover" /></a></li>
+				<li><a href="#"><img src="img/css.png" alt="CSS" class="rollover" /></a></li>
+				<li><a href="#"><img src="img/html.png" alt="HTML" class="rollover" /></a></li>
 			</ul>
 		</div>
 	</body>
