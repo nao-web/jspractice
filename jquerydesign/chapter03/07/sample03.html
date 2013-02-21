@@ -15,12 +15,18 @@
 		}
 		#sample2{
 			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alphs.gif',sizingMethod='scale')";
+			background: url('img/alpha.png') no-repeat;
+  			background-size: 100% 100%;
 		}
 		#sample3{
 			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='image');
 		}
 		#sample4{
 			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alpha.png',sizingMethod='crop');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/alphs.gif',sizingMethod='crop')";
+			background: url('img/alpha.png') no-repeat;
+			background-size: 100px 50px;
 		}
 	</style>
 	</head>
