@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample1</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			$("span.tooltip").css({
+				opacity:"0.9",
+				position:"absolute",
+				display:"none"
+			});
+			$("a").mouseover(function(){
+				$("span.tooltip").fadeIn();
+			}).mouseout(function(){
+				$("span.tooltip").fadeOut();
+			}).mousemove(function(e){
+				$("span.tooltip").css({
+					"top":e.pageY+10+"px",
+					"left":e.pageX+10+"px"
+				});
+			});
+		});
+	</script>
+	<style>
+		body{
+			background:#777;
+			color:white;
+		}
+		a{
+			color:#00CCFF;
+		}
+		h1{
+			width:80%;
+			margin:10px auto;
+		}
+		p{
+			margin:10px 10%;
+		}
+		span.tooltip{
+			line-height:1.5;
+			color:white;
+			width:200px;
+			background:#FF9900;
+			border:2px solid white;
+			padding:1em;
+			font-size:small;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>tooltip sample</h1>
+		<p>test1<a href="#">tooltip sample</a> <span class="tooltip">tooltip sample<br /><strong>tooptip<br />sample</strong><br />br</span>test1</p>
+
+		<p>test2</p>
+
+		<p>test3</p>
+
+	</body>
+</html>
