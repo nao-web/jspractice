@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<title>sample4</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+ 	<script>
+		$(function(){
+			
+			$("dd").hide()
+			$("body").append("<div id='glayLayer'></div><div id='overLayer'></div>");
+			
+			$("#glayLayer").click(function(){
+				$(this).hide();
+				$("#overLayer").hide();
+			});
+			
+			$("dt").click(function(){
+				$("#glayLayer").show()
+				$("#overLayer").show().html($("+dd",this).html()).css({
+					marginTop:"-"+$("#overLayer").height()/2+"px" , 
+					marginLeft:"-"+$("#overLayer").width()/2+"px" 
+				});
+				return false;
+			});
+			
+			if($.browser.msie && $.browser.version<7){
+				$(window).scroll(function(){
+					$("#glayLayer").get(0).style.setExpression("top","$(document).scrollTop()+'px'");
+					$("#overLayer").get(0).style.setExpression("top","($(document).scrollTop()+$(window).height()/2)+'px'");
+				});
+			}
+			
+		});
+	</script>
+	<style>
+		html,body{
+			margin:0;
+			padding:0;
+			height:100%;
+		}
+		dl dt{
+			margin:20px 50px;
+			font-size:large;
+			border:1px solid #7BAEB5;
+			border-left:1em solid #7BAEB5;
+			padding-left:10px;
+			width:600px;
+			cursor:pointer;
+		}
+		div#glayLayer{
+			display:none;
+			position:fixed;
+			left:0;
+			top:0;
+			height:100%;
+			width:100%;
+			background:#7BAEB5;
+			filter:alpha(opacity=75);
+			opacity: 0.75;
+		}
+		* html div#glayLayer{
+			position:absolute;
+		}
+		#overLayer{
+			display:none;
+			width:400px;
+			background:white;
+			padding:10px;
+			position: fixed;
+			top:50%;
+			left:50%;
+		}
+		* html #overLayer{
+			position: absolute;
+		}
+
+	</style>
+	</head>
+	<body>
+		<dl>
+			<dt>test1</dt>
+			<dd><p>testtesttesttesttesttest</p></dd>
+			
+			<dt>test2</dt>
+			<dd><p>testtesttesttesttesttest</p></dd>
+			
+			<dt>test3</dt>
+			<dd><p>testtesttesttesttesttest</p></dd>
+		</dl>
+	</body>
+</html>
