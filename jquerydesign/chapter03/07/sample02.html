@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<style>
+		div{
+			width:600px;
+			height:400px;
+			background:url("img/background.jpg");
+			margin:100px auto;
+		}
+		ul{
+			padding: 10px;
+			margin:0;
+		}
+		ul li{
+			width:140px;
+			height:40px;
+			list-style-type:none;
+			float:left;
+		}
+		ul li img{
+			width:140px;
+			height:40px;
+			border:none;
+		}
+		* html img.jquery{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/jquery.png',sizingMethod='scale');
+		}
+		* html img.javascript{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/javascript.png',sizingMethod='scale');
+		}
+		* html img.css{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/css.png',sizingMethod='scale');
+		}
+		* html img.html{
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/html.png',sizingMethod='scale');
+		}
+	</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><a href="#"><img src="img/transparent.gif" alt="jQuery" class="jquery" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="javascript" class="javascript" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="CSS" class="css" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="HTML" class="html" /></a></li>
+			</ul>
+		</div>
+	</body>
+</html>
