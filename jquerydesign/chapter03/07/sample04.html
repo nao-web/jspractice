@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+	<title>sample2</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		$(function(){
+			$("img.rollover").each(function(){
+				$("<img>").attr("src",$(this).attr("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2"));
+			});
+			
+			if($.browser.msie && $.browser.version<7){
+				$("img.rollover").each(function(){
+					
+					$(this)
+						.data("src",$(this).attr("src"))
+						.attr("src","img/transparent.gif")
+						.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+$(this).data("src")+"',sizingMethod='scale')");
+					
+				}).mouseover(function(){
+					$(this).css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+$(this).data("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2")+"',sizingMethod='scale')");
+				}).mouseout(function(){
+					$(this).css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+$(this).data("src")+"',sizingMethod='scale')");
+				});
+				
+			}else{
+				$("img.rollover").mouseover(function(){
+					$(this).attr("src",$(this).attr("src").replace(/^(.+)(\.[a-z]+)$/, "$1_on$2"));
+				}).mouseout(function(){
+					$(this).attr("src",$(this).attr("src").replace(/^(.+)_on(\.[a-z]+)$/, "$1$2"));
+				});
+			}
+		});
+	</script>
+	<style>
+		div{
+			width:600px;
+			height:400px;
+			background:url("img/background.jpg");
+			margin:100px auto;
+		}
+		ul{
+			padding: 10px;
+			margin:0;
+		}
+		ul li{
+			width:140px;
+			height:40px;
+			list-style-type:none;
+			float:left;
+		}
+		ul li img{
+			width:140px;
+			height:40px;
+			border:none;
+		}
+	</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><a href="#"><img src="img/transparent.gif" alt="jQuery" class="jquery" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="javascript" class="javascript" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="CSS" class="css" /></a></li>
+				<li><a href="#"><img src="img/transparent.gif" alt="HTML" class="html" /></a></li>
+			</ul>
+		</div>
+	</body>
+</html>
