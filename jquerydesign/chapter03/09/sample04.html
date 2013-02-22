@@ -24,7 +24,7 @@
 				return false;
 			});
 			
-			if(jQuery.support.style){
+			if($.support.style){
 				$(window).scroll(function(){
 					$("#glayLayer").get(0).style.setExpression("top","$(document).scrollTop()+'px'");
 					$("#overLayer").get(0).style.setExpression("top","($(document).scrollTop()+$(window).height()/2)+'px'");
