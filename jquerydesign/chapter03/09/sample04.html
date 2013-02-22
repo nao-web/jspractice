@@ -24,7 +24,7 @@
 				return false;
 			});
 			
-			if($.browser.msie && $.browser.version<7){
+			if(jQuery.support.style){
 				$(window).scroll(function(){
 					$("#glayLayer").get(0).style.setExpression("top","$(document).scrollTop()+'px'");
 					$("#overLayer").get(0).style.setExpression("top","($(document).scrollTop()+$(window).height()/2)+'px'");
