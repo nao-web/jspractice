@@ -6,16 +6,16 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$("#content").load($("ul.pager li a:first").attr("href")+" #content");
+			$("#content").load($("ul.pager li a:first").attr("href") + " #content");
 			$("ul.pager li a:first").addClass("selected");
 			
 			$("ul.pager li a").click(function(){
 				
 				$("#content").html('<p class="loading"><img src="img/loading.gif" alt="" /></p>');
 				
-				$("#content").data("file",$(this).attr("href"));
+				$("#content").data("file", $(this).attr("href"));
 				
-				$('html,body').animate({ scrollTop: $("h1").offset().top-20 }, 'slow','swing',function(){
+				$('html, body').animate({ scrollTop: $("h1").offset().top - 20 }, 'slow', 'swing', function(){
 					$("#content").load($("#content").data("file")+" #content");
 				})
 				
