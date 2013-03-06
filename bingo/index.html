@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ja">
+<head>
+ <meta charset="utf-8">
+	<title>Bingo</title>
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/oauth.js"></script>
+	<script type="text/javascript" src="js/sha1.js"></script>
+	<script type="text/javascript">
+		// Twitterオブジェクトのコンストラクタ・プロトタイプ定義
+		function Twitter() {}
+		Twitter.prototype = {
+			consumerKey: "8NKsZk8WZzYP8AAhNpw",
+			consumerSecret: "PWbVZjH8h16a3whGtxEg0nkg3nmyP79ohXvoBAhKHeg",
+			accessToken: "285086573-Gneb4SiNjnTjWdGZnlr7sOy5B7jnGKm9e8nnnezM",
+			tokenSecret: "tXqnoKKfEPBlO2RGnozw18GMyjqikgNL9JvtGss"
+		};
+		Twitter.prototype.get = function(api, content) {
+			var accessor = {
+				consumerSecret: this.consumerSecret,
+				tokenSecret: this.tokenSecret
+			};
+			var message = {
+				method: "GET",
+				action: api,
+				parameters: {
+					oauth_version: "1.0",
+					oauth_signature_method: "HMAC-SHA1",
+					oauth_consumer_key: this.consumerKey,
+					oauth_token: this.accessToken
+				}
+			};
+			for(var key in content) {
+				message.parameters[key] = content[key];
+			}
+			OAuth.setTimestampAndNonce(message);
+			OAuth.SignatureMethod.sign(message, accessor);
+			var target = OAuth.addToURL(message.action, message.parameters);
+
+			var options = {
+				type: message.method,
+				url: target,
+				dataType: "jsonp",
+				jsonp: false,
+				cache: true
+			}
+			$.ajax(options);
+		}
+		var twitter = new Twitter();
+
+		function update(data) {
+
+			var tweets = data.statuses;
+			// shuffle
+			shuffle(tweets);
+			// bingoList
+
+			var bingoList = [];
+
+			for(var i = 1; i < 25; i++) {
+				bingoList.push(tweets[i].user.id);
+				$("#" + i).append('<img src="' + tweets[i].user.profile_image_url + '" >').attr('data-id',tweets[i].user.id);;
+			}
+
+			// overlapping
+			var bingoList = unique(bingoList);
+			var myListCount = 0;
+
+			$('.start').click(function(){
+				// random bingoList
+				var check = [];
+				if (bingoList == frstX) {
+					alert('frst');
+				}
+
+				if (bingoList.length == 1) {
+					$(this).hide();
+					$('#challenge').append('end')
+				}
+				var rndNum = shuffle(bingoList);
+				var frstNum = bingoList.shift();
+				
+				// array add
+				var myList = [];
+				myListCount += 1;
+				myList[myListCount] = frstNum;
+				console.log(myList);
+				//myList.push(frstNum);
+
+				// random view
+				// $("#challenge").html('<img src="' + tweets[1].user.profile_image_url + '">');
+				$('.card[data-id = ' + frstNum + '] img').clone().prependTo('#challenge');
+				// opacity
+				$('.card[data-id = ' + frstNum + ']').css('opacity',0.2).addClass('select');
+
+				// check
+				// bingoList x
+
+				if($('#1').hasClass('select') && $('#2').hasClass('select') && $('#3').hasClass('select') && $('#4').hasClass('select') && $('#5').hasClass('select')) {
+					alert('frstX bingo');
+					$(this).hide();
+				}
+
+				if($('#6').hasClass('select') && $('#7').hasClass('select') && $('#8').hasClass('select') && $('#9').hasClass('select') && $('#10').hasClass('select')) {
+					alert('scndX bingo');
+					$(this).hide();
+				}
+
+				if($('#11').hasClass('select') && $('#12').hasClass('select') && $('#13').hasClass('select') && $('#14').hasClass('select')) {
+					alert('thrdX bingo');
+					$(this).hide();
+				}
+
+				if($('#15').hasClass('select') && $('#16').hasClass('select') && $('#17').hasClass('select') && $('#18').hasClass('select') && $('#19').hasClass('select')) {
+					alert('fourX bingo');
+					$(this).hide();
+				}
+
+				if($('#20').hasClass('select') && $('#21').hasClass('select') && $('#22').hasClass('select') && $('#23').hasClass('select') && $('#24').hasClass('select')) {
+					alert('fiveX bingo');
+					$(this).hide();
+				}
+
+				// bingoList y
+				if($('#1').hasClass('select') && $('#6').hasClass('select') && $('#11').hasClass('select') && $('#15').hasClass('select') && $('#20').hasClass('select')) {
+					alert('frstY bingo');
+					$(this).hide();
+				}
+
+				if($('#2').hasClass('select') && $('#7').hasClass('select') && $('#12').hasClass('select') && $('#16').hasClass('select') && $('#21').hasClass('select')) {
+					alert('scndY bingo');
+					$(this).hide();
+				}
+
+				if($('#3').hasClass('select') && $('#8').hasClass('select') && $('#17').hasClass('select') && $('#22').hasClass('select')) {
+					alert('thrdY bingo');
+					$(this).hide();
+				}
+
+				if($('#4').hasClass('select') && $('#9').hasClass('select') && $('#14').hasClass('select') && $('#18').hasClass('select') && $('#23').hasClass('select')) {
+					alert('fourY bingo');
+					$(this).hide();
+				}
+
+				if($('#5').hasClass('select') && $('#10').hasClass('select') && $('#14').hasClass('select') && $('#19').hasClass('select') && $('#24').hasClass('select')) {
+					alert('fiveY bingo');
+					$(this).hide();
+				}
+
+				// bingoList tilt
+				if($('#1').hasClass('select') && $('#7').hasClass('select') && $('#18').hasClass('select') && $('#24').hasClass('select')) {
+					alert('tilt1 bingo');
+					$(this).hide();
+				}
+
+				if($('#5').hasClass('select') && $('#9').hasClass('select') && $('#16').hasClass('select') && $('#20').hasClass('select')) {
+					alert('tilt2 bingo');
+					$(this).hide();
+				}
+			});
+		}
+
+		$(function() {
+			// オプションとコールバック関数の指定
+
+			// search/tweets ->API の limit が180
+			var content = {q: "#momoclo", count: 100, callback: "update"};
+			// followers/list ->API の limit が15
+			//var content = {callback: "update", cursor: -1};
+			// Twitter API の呼び出し search
+			twitter.get("https://api.twitter.com/1.1/search/tweets.json", content);
+      		// user
+			//twitter.get("https://api.twitter.com/1.1/followers/list.json", content);
+		});
+
+		function shuffle(list) {
+		  var i = list.length;
+
+		  while (--i) {
+		    var j = Math.floor(Math.random() * (i + 1));
+		    if (i == j) continue;
+		    var k = list[i];
+		    list[i] = list[j];
+		    list[j] = k;
+		  }
+
+		  return list;
+		}
+
+		function unique(Arr){
+		    var storeArr = new Array;
+		    var ret = new Array;
+		    i=0;
+		    f=0;
+		    while(Arr[i] != null){
+		        if(Arr[i] != ""){
+		            if(storeArr[String(Arr[i])]){
+		            }else{
+		                storeArr[String(Arr[i])] = 1;
+		                ret[f]=Arr[i];
+		                f++;
+		            }
+		        }
+		        i++;
+		    }
+		    return ret;
+		}
+</script>
+</head>
+<body>
+<table border="1px #fff solid;" align="center" style="float:left;">
+ <tr align=center>
+  <td id="1" class="card"></td>
+  <td id="2" class="card"></td>
+  <td id="3" class="card"></td>
+  <td id="4" class="card"></td>
+  <td id="5" class="card"></td>
+</tr>
+ <tr align=center>
+  <td id="6" class="card"></td>
+  <td id="7" class="card"></td>
+  <td id="8" class="card"></td>
+  <td id="9" class="card"></td>
+  <td id="10" class="card"></td>
+ </tr>
+ <tr align=center>
+  <td id="11" class="card"></td>
+  <td id="12" class="card"></td>
+  <td id="card_center">☓</td>
+  <td id="13" class="card"></td>
+  <td id="14" class="card"></td>
+ </tr>
+ <tr align=center>
+  <td id="15" class="card"></td>
+  <td id="16" class="card"></td>
+  <td id="17" class="card"></td>
+  <td id="18" class="card"></td>
+  <td id="19" class="card"></td>
+ </tr>
+ <tr align=center>
+  <td id="20" class="card"></td>
+  <td id="21" class="card"></td>
+  <td id="22" class="card"></td>
+  <td id="23" class="card"></td>
+  <td id="24" class="card"></td>
+ </tr>
+</table>
+
+<input type="button" value="start" class="start">
+<div id="challenge"></div>
+<div id="id"></div>
+<div id="test" style="clear: both">
+</div>
+</body>
+</html>
