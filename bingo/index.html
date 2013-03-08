@@ -11,10 +11,10 @@
 		// Twitterオブジェクトのコンストラクタ・プロトタイプ定義
 		function Twitter() {}
 		Twitter.prototype = {
-			consumerKey: "8NKsZk8WZzYP8AAhNpw",
-			consumerSecret: "PWbVZjH8h16a3whGtxEg0nkg3nmyP79ohXvoBAhKHeg",
-			accessToken: "285086573-Gneb4SiNjnTjWdGZnlr7sOy5B7jnGKm9e8nnnezM",
-			tokenSecret: "tXqnoKKfEPBlO2RGnozw18GMyjqikgNL9JvtGss"
+			consumerKey: "xxx",
+			consumerSecret: "xxx",
+			accessToken: "xxx",
+			tokenSecret: "xxx"
 		};
 		Twitter.prototype.get = function(api, content) {
 			var accessor = {
@@ -69,10 +69,6 @@
 
 			$('.start').click(function(){
 				// random bingoList
-				var check = [];
-				if (bingoList == frstX) {
-					alert('frst');
-				}
 
 				if (bingoList.length == 1) {
 					$(this).hide();
@@ -97,67 +93,20 @@
 				// check
 				// bingoList x
 
-				if($('#1').hasClass('select') && $('#2').hasClass('select') && $('#3').hasClass('select') && $('#4').hasClass('select') && $('#5').hasClass('select')) {
-					alert('frstX bingo');
-					$(this).hide();
-				}
+				var s = 'hasClass("select")'
 
-				if($('#6').hasClass('select') && $('#7').hasClass('select') && $('#8').hasClass('select') && $('#9').hasClass('select') && $('#10').hasClass('select')) {
-					alert('scndX bingo');
-					$(this).hide();
-				}
+				var width = $('<td id="5" class="card" data-id="518794696">').parent();
+				console.log(width);
 
-				if($('#11').hasClass('select') && $('#12').hasClass('select') && $('#13').hasClass('select') && $('#14').hasClass('select')) {
-					alert('thrdX bingo');
-					$(this).hide();
-				}
+				//var bingoArray = [$('#1').s && $('#2').s && $('#3').s && $('#4').s && $('#5').s, $('#6').s && $('#7').s && $('#8').s && $('#9').s && $('#10').s, $('#11').s && $('#12').s && $('#13').s && $('#14').s, $('#15').s && $('#16').s && $('#17').s && $('#18').s && $('#19').s, $('#20').s && $('#21').s && $('#22').s && $('#23').s && $('#24').s, $('#1').s && $('#6').s && $('#11').s && $('#15').s && $('#20').s, $('#2').s && $('#7').s && $('#12').s && $('#16').s && $('#21').s, $('#3').s && $('#8').s && $('#17').s && $('#22').s, $('#4').s && $('#9').s && $('#14').s && $('#18').s && $('#23').s, $('#5').s && $('#10').s && $('#14').s && $('#19').s && $('#24').s, $('#5').s && $('#9').s && $('#16').s && $('#20').s];
 
-				if($('#15').hasClass('select') && $('#16').hasClass('select') && $('#17').hasClass('select') && $('#18').hasClass('select') && $('#19').hasClass('select')) {
-					alert('fourX bingo');
-					$(this).hide();
-				}
 
-				if($('#20').hasClass('select') && $('#21').hasClass('select') && $('#22').hasClass('select') && $('#23').hasClass('select') && $('#24').hasClass('select')) {
-					alert('fiveX bingo');
-					$(this).hide();
-				}
-
-				// bingoList y
-				if($('#1').hasClass('select') && $('#6').hasClass('select') && $('#11').hasClass('select') && $('#15').hasClass('select') && $('#20').hasClass('select')) {
-					alert('frstY bingo');
-					$(this).hide();
-				}
-
-				if($('#2').hasClass('select') && $('#7').hasClass('select') && $('#12').hasClass('select') && $('#16').hasClass('select') && $('#21').hasClass('select')) {
-					alert('scndY bingo');
-					$(this).hide();
-				}
-
-				if($('#3').hasClass('select') && $('#8').hasClass('select') && $('#17').hasClass('select') && $('#22').hasClass('select')) {
-					alert('thrdY bingo');
-					$(this).hide();
-				}
-
-				if($('#4').hasClass('select') && $('#9').hasClass('select') && $('#14').hasClass('select') && $('#18').hasClass('select') && $('#23').hasClass('select')) {
-					alert('fourY bingo');
-					$(this).hide();
-				}
-
-				if($('#5').hasClass('select') && $('#10').hasClass('select') && $('#14').hasClass('select') && $('#19').hasClass('select') && $('#24').hasClass('select')) {
-					alert('fiveY bingo');
-					$(this).hide();
-				}
-
-				// bingoList tilt
-				if($('#1').hasClass('select') && $('#7').hasClass('select') && $('#18').hasClass('select') && $('#24').hasClass('select')) {
-					alert('tilt1 bingo');
-					$(this).hide();
-				}
-
-				if($('#5').hasClass('select') && $('#9').hasClass('select') && $('#16').hasClass('select') && $('#20').hasClass('select')) {
-					alert('tilt2 bingo');
-					$(this).hide();
-				}
+				// for (var i = 0; i < bingoArray.length; i += 1) {
+				// if (bingoArray[i]) {
+				// 	alert('BINGO');
+				// 	$(this).hide();
+				// 	}
+				// }
 			});
 		}
 
