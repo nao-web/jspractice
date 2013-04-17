@@ -1,3 +1,3 @@
-var add = funciton (a,b) {
-	return a + b;
+var add = function (a,b) {
+  return a + b;
 };
