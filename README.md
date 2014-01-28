@@ -72,7 +72,7 @@ The Sutras the sample code from the following lessons
 * [ Make a parallax site ] (http://dotinstall.com/lessons/parallax_html)
 
 
-# JQuery Primer design for use in the field of Web design
+# jQuery Primer design for use in the field of Web design
 
 The Sutras up 3-13 from 3-1 in Chapter 3
 
