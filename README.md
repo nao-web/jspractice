@@ -1,81 +1,81 @@
-#JavaScript: The Good Parts、 JavaScriptパターン  
+# JavaScript: The Good Parts,  JavaScript pattern
 
-以下の章に書いてあるコードを写経  
+The Sutras code that is written in the following chapters:
 
-[JavaScript: The Good Parts ―「良いパーツ」によるベストプラクティス](http://www.amazon.co.jp/dp/4873113911)より 
+[JavaScript: The Good Parts - best practice by the "good part" ] from (http://www.amazon.co.jp/dp/4873113911)
 
-* 3章 オブジェクト
+* Section 3 objects
 
-* 4章 関数
+* Chapter 4 function
 
-* 5章 継承
+* Chapter 5 inheritance
 
-* 6章 配列
+* Chapter 6 array
 
-* 7章 正規表現
+* Chapter 7 regular expression
 
-* 8章 メソッド
+* Chapter 8 method
 
-* 付録E E.3 JSONパーサ
+* Appendix E E.3 JSON parser
 
-[JavaScriptパターン ―優れたアプリケーションのための作法](http://www.amazon.co.jp/dp/4873114888/)より
+[JavaScript pattern - Manners for the excellent application ] from (http://www.amazon.co.jp/dp/4873114888/)
 
-* 4章 関数
+* Chapter 4 function
 
-* 5章 オブジェクト作成のパターン
+* Pattern of object creation in Chapter 5
 
-* 6章 コード再利用パターン
+* Chapter 6 code reuse pattern
 
-* 7章 デザインパターン
+* Chapter 7 design pattern
 
-* 8章 DOMとブラウザのパターン
+* Pattern and Browser DOM Chapter 8
 
-#ドットインストール
+# Dot installation
 
-以下のレッスンからサンプルコードを写経
+The Sutras the sample code from the following lessons
 
-##STEP2 手軽にプログラミングができるJavaScriptを覚えよう
+# # Learn the JavaScript that can be programmed easily STEP2
 
-* [JavaScriptで作る「簡単おみくじ」](http://dotinstall.com/lessons/omikuji_js)
+* [ To make with JavaScript "Easy fortune " ] (http://dotinstall.com/lessons/omikuji_js)
 
-* [JavaScriptで作る「あなたの誕生日診断」](http://dotinstall.com/lessons/date_js)
+* [ " Birthday your diagnosis " to make with JavaScript] (http://dotinstall.com/lessons/date_js)
 
-* [JavaScriptで作るスロットマシーン](http://dotinstall.com/lessons/slot_js)
+* [ Slot machine to make with JavaScript] (http://dotinstall.com/lessons/slot_js)
 
-* [JavaScriptで作るストップウォッチ](http://dotinstall.com/lessons/stop_watch_js)
+* [ Stopwatch to make with JavaScript] (http://dotinstall.com/lessons/stop_watch_js)
 
-* [JavaScriptで作る「5秒でキメろ！」](http://dotinstall.com/lessons/just_five_js)
+* [ To make with JavaScript " The Kimero 5 seconds ! " ] (Http://dotinstall.com/lessons/just_five_js)
 
-* [JavaScriptで作る「王様ゲーム」](http://dotinstall.com/lessons/king_game_js) 
+* [ To make with JavaScript "King game" ] (http://dotinstall.com/lessons/king_game_js)
 
-* [JavaScriptで作る「割り勘電卓」](http://dotinstall.com/lessons/go_dutch_js)
+* [ To make with JavaScript " split the bill calculator " ] (http://dotinstall.com/lessons/go_dutch_js)
 
-* [JavaScriptで作る「数字タッチゲーム](http://dotinstall.com/lessons/numbers_js)
+* [ To make with JavaScript " numbers game touch ] (http://dotinstall.com/lessons/numbers_js)
 
-* [JavaScriptで作る「神経衰弱」](http://dotinstall.com/lessons/memory_js)
-
-
-##STEP3 JavaScriptをもっと便利にしてくれるjQueryを覚えよう
-
-* [JavaScriptで作る残り文字数チェッカー](http://dotinstall.com/lessons/char_checker_js)
-
-* [｢このページの先頭へ｣を実装する](http://dotinstall.com/lessons/scroll_js)
-
-* [JavaScriptで作る「パスワードジェネレータ」](http://dotinstall.com/lessons/pwd_generator_js)
-
-* [JavaScriptで作る「キャラ診断」](http://dotinstall.com/lessons/shindan_js)
-
-* [HTML5で作る「シンプルメモ帳」](http://dotinstall.com/lessons/memo_html5)
-
-* [JavaScriptで作る「間違い探しゲーム」](http://dotinstall.com/lessons/doubt_js)
-
-* [パララックスサイトを作ろう](http://dotinstall.com/lessons/parallax_html)
+* [ To make with JavaScript " nervous breakdown " ] (http://dotinstall.com/lessons/memory_js)
 
 
-#Web制作の現場で使う jQueryデザイン入門
+# # Learn the jQuery to make for more convenient STEP3 JavaScript
 
-第3章の 3-1から3-13 までを写経
+* Remaining number of characters checker to make with JavaScript] (http://dotinstall.com/lessons/char_checker_js)
 
-* [サイト](http://ascii.asciimw.jp/books/books/detail/978-4-04-868411-8.shtml) 
+* [ To implement " to the top of this page" ] (http://dotinstall.com/lessons/scroll_js)
 
-* [サンプルコード](http://go.ascii.jp/?jquery_sample)
+* [ To make with JavaScript " Password Generator " ] (http://dotinstall.com/lessons/pwd_generator_js)
+
+* [ To make with JavaScript " character Diagnostics " ] (http://dotinstall.com/lessons/shindan_js)
+
+* [ To make with HTML5 "Simple Notepad " ] (http://dotinstall.com/lessons/memo_html5)
+
+* [ "Game looking mistake " to make with JavaScript] (http://dotinstall.com/lessons/doubt_js)
+
+* [ Make a parallax site ] (http://dotinstall.com/lessons/parallax_html)
+
+
+# JQuery Primer design for use in the field of Web design
+
+The Sutras up 3-13 from 3-1 in Chapter 3
+
+* [ Site ] (http://ascii.asciimw.jp/books/books/detail/978-4-04-868411-8.shtml)
+
+* [ Sample code ] (http://go.ascii.jp/?jquery_sample)
