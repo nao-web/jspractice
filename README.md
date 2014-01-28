@@ -34,7 +34,7 @@ The Sutras code that is written in the following chapters:
 
 The Sutras the sample code from the following lessons
 
-# # Learn the JavaScript that can be programmed easily STEP2
+## Learn the JavaScript that can be programmed easily STEP2
 
 * [ To make with JavaScript "Easy fortune " ] (http://dotinstall.com/lessons/omikuji_js)
 
@@ -55,7 +55,7 @@ The Sutras the sample code from the following lessons
 * [ To make with JavaScript " nervous breakdown " ] (http://dotinstall.com/lessons/memory_js)
 
 
-# # Learn the jQuery to make for more convenient STEP3 JavaScript
+## Learn the jQuery to make for more convenient STEP3 JavaScript
 
 * Remaining number of characters checker to make with JavaScript] (http://dotinstall.com/lessons/char_checker_js)
 
